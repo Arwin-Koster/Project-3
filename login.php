@@ -15,7 +15,14 @@
       $usr=$_POST['username'];
       $pwd=$_POST['password'];
      // Establishing Connection with Server by passing server_name, user_id  and password as a parameter
-     $con = mysql_connect("localhost", "root", "", "bierverkoop") or die('Error Connecting to mysql server');
+     $servername='localhost';
+    $username='root';
+    $password='';
+    $dbname = "bierverkoop";
+    $conn=mysqli_connect($servername,$username,$password,$dbname);
+      if(!$conn){
+          die('Could not Connect MySql Server:' .mysql_error());
+        }
      // To protect MySQL injection for Security purpose
      $username = stripslashes($usr);
      $password = stripslashes($pwd);

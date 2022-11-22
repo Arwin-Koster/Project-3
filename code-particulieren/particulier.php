@@ -1,5 +1,7 @@
     <?php
-    
+
+$verzend1 = 7.5;
+$verzend2 = 5;
 
 ?>
 
@@ -30,16 +32,6 @@
             background-color: #c3c3c3;
 
         }
-        .prijs{
-            background-color: white;
-            width: 100px;
-            height: 100px;
-            border: 5px solid #c3c3c3;
-            position: absolute;
-            left: 50%;
-            top: 65%;
-            
-        }
         </style>
 
     </head>
@@ -50,8 +42,8 @@
         </div>
     <!--info-->
         <div>
-        <h1 class="infotext">  - "Speciaal bier" - prijs per flesje - &euro;2,50 -<br><br>- Het verzendtarief voor dit product is &euro;7,50 tot bestellingen van &euro;25,-
-        <br><br>- Voor bestellingen over dit bedrag daalt dit bedrag naar &euro;5,- <br><br>- Er mogen maximaal 24 flesjes per bestelling worden gekocht. -</h1>
+        <h1 class="infotext">  - "Speciaal bier" - prijs per flesje - &euro;2,50 -<br><br>- Het verzendtarief voor dit product is &euro;7,50 tot bestellingen van &euro;25,00-
+        <br><br>- Voor bestellingen over dit bedrag daalt dit bedrag naar &euro;5,00- <br><br>- Er mogen maximaal 24 flesjes per bestelling worden gekocht. -</h1>
         </div>
     
     
@@ -59,10 +51,21 @@
         Kies een aantal: <br>
 
     <!--aantal-->
-        <input required type="number" max="24" min="1" id="aantal"  
+        <input required type="number" max="24" min="1" id="aantal"
         name="aantal" placeholder="aantal" />
-        <br><br>Vul de volgende gegevens in:<br>
         
+        <?php
+        
+        $prijs2 = "'aantal' * 2.50 + $verzend2";
+
+           if ('aantal' >= 0) {
+            echo number_format((float)$prijs2, 2, '.', '');  
+           }
+
+
+        ?>
+        
+        <br><br>Vul de volgende gegevens in:<br>
     <!--email-->
         
         <input required type="email" 

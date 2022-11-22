@@ -6,13 +6,14 @@
 </form>
 
 <?php
-
 $conn = new mysqli('localhost','root','','bierverkoop');
 if($conn->connect_error){
     die('connection failed : '.$conn->connect_error);
 }
 
+
 session_start();
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     if(strlen($_POST['password']) < 0){

@@ -1,10 +1,6 @@
 <?php
-    $servername='localhost';
-    $username='root';
-    $password='';
-    $dbname = "bierverkoop";
-    $conn=mysqli_connect($servername,$username,$password,$dbname);
-      if(!$conn){
-          die('Could not Connect MySql Server:' .mysql_error());
-        }
+$conn = new mysqli('localhost','root','','bierverkoop');
+if($conn->connect_error){
+    die('connection failed : '.$conn->connect_error);
+}
 ?>

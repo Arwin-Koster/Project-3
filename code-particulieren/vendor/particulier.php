@@ -56,10 +56,31 @@ $verzend2 = 5;
         Kies een aantal: <br>
 
     <!--aantal-->
-        <input required type="number" max="24" min="1" id="aantal" 
+    
+        <input required type="number" max="24" min="1" id="aantal" onchange="totaal()"
         name="aantal" placeholder="aantal" />
 
+        
 
+            <div style="position: absolute; left:26%; top: 2%;">
+            <p>totaal:&euro;</p>
+            </div>
+            <div style="position: absolute; left: 55%; top: 2%;">
+                    <p id="demo"></p>
+
+        <script>
+        function totaal() {
+            
+        var x = document.getElementById("aantal").value;
+        if (x < 10)
+        document.getElementById("demo").innerHTML = x * 2.5 + 7.5;
+        else
+        document.getElementById("demo").innerHTML = x *2.5 + 5;
+        }
+        </script>
+
+        </div>
+ 
         <br><br>Vul de volgende gegevens in:<br>
     <!--email-->
         
